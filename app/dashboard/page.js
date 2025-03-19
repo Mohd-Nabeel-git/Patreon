@@ -1,18 +1,17 @@
 "use client"
 import React from 'react'
-import { useSession, signIn, signOut } from "next-auth/react"
-import { useRouter } from 'next/navigation'
+import DashBoard from '@/components/DashBoard'
+import Layout from '@/components/overflow'
+import Footer from '@/components/Footer'
 
 const page = () => {
-  const { data: session } = useSession()
-      if(!session) {
-          const router = useRouter()
-          router.push('/login') 
-        }
   return (
-    <div className='text-white'>
-      dashboard
-    </div>
+    <Layout>
+      <div className='text-white'>
+        <DashBoard/>
+      </div>
+      <Footer/>
+    </Layout>
   )
 }
 
